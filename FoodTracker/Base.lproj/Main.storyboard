@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="auY-tk-ulm">
-                                <rect key="frame" x="0.0" y="40" width="375" height="424.5"/>
+                                <rect key="frame" x="0.0" y="40" width="375" height="476.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ymg-JW-RSv">
                                         <rect key="frame" x="0.0" y="0.0" width="86.5" height="20.5"/>
@@ -50,6 +50,9 @@
                                             <outletCollection property="gestureRecognizers" destination="xR3-bc-axb" appends="YES" id="5WE-KA-FJD"/>
                                         </connections>
                                     </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6gP-W5-8c3" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="432.5" width="252" height="44"/>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="CiX-hP-f9i" secondAttribute="trailing" id="UkP-lT-XQn"/>
