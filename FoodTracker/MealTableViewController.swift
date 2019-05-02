@@ -13,6 +13,16 @@ class MealTableViewController: UITableViewController {
     //MARK: Properties
     var meals = [Meal]()
     
+    //MARK: Actions
+    @IBAction func unwindToMealList(sender: UIStoryboardSegue){
+        if let sourceViewController = sender.source as? MealViewController, let meal = sourceViewController.meal{
+            // add a new meal
+            let newIndexPath = IndexPath(row: meals.count, section: 0)
+            meals.append(meal)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
+    
     //MARK: Private Methods
     private func loadSampleMeals() {
         let photo1 = UIImage(named: "meal1")
@@ -62,8 +72,8 @@ class MealTableViewController: UITableViewController {
         let cellIdentifier = "MealTableViewCell"
         
          // dequeueResuableCell instantiates new cell if no cell is available
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MealTableViewCell else {
-            fatalError("Dequeued cell is not an instance of MealTableViewCell")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MealTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of MealTableViewCell.")
         }
         //Fetches appropriate meal for the data source layout
         let meal = meals[indexPath.row]
